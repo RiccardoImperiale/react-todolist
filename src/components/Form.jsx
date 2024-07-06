@@ -7,7 +7,13 @@ export default function Form({ todos, setTodos }) {
     const [id, setId] = useState(1);
 
     useEffect(() => {
-        setTodos(JSON.parse(localStorage.getItem('todos')) || []);
+        let local = JSON.parse(localStorage.getItem('todos')) || []
+        setTodos(local);
+        if (local.length > 0) {
+            setId(local[local.length - 1].id + 1)
+        } else {
+            setId(1)
+        }
     }, [setTodos]);
 
     function handleSubmit(e) {
