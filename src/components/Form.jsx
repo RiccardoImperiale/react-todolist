@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { TiPlus } from "react-icons/ti";
+
 import './form.css'
 export default function Form({ todos, setTodos }) {
     const [todo, setTodo] = useState('')
@@ -10,8 +12,10 @@ export default function Form({ todos, setTodos }) {
     }
     return (
         <form onSubmit={handleSubmit} className="container">
-            <input value={todo} onChange={(e) => setTodo(e.target.value)} type="text" />
-            <button type="submit">Add</button>
+            <div className="wrapper">
+                <input value={todo} onChange={(e) => setTodo(e.target.value)} type="text" placeholder="Something to do?" />
+                <button type="submit"><span>Add</span><TiPlus className="plus_icon" /></button>
+            </div>
         </form>
     )
 }
