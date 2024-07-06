@@ -3,6 +3,7 @@ import './todolist.css'
 
 export default function TodoList({ todos, setTodos }) {
     let completedTasks = todos.filter(todo => todo.complete === true).length
+    const sortedTasks = todos.slice().sort((a, b) => Number(a.complete) - Number(b.complete))
     return (
         <div className="container">
             <div className="todo_list">
@@ -16,7 +17,7 @@ export default function TodoList({ todos, setTodos }) {
                         </h3>
                     </div>
 
-                    {todos.map(item => (
+                    {sortedTasks.map(item => (
                         <Task key={item.id} item={item} todos={todos} setTodos={setTodos} />
                     ))}
 

@@ -1,10 +1,14 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { TiPlus } from "react-icons/ti";
 
 import './form.css'
 export default function Form({ todos, setTodos }) {
     const [todo, setTodo] = useState({ id: 0, name: '', complete: false })
     const [id, setId] = useState(1);
+
+    useEffect(() => {
+        setTodos(JSON.parse(localStorage.getItem('todos')) || []);
+    }, [setTodos]);
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -14,6 +18,7 @@ export default function Form({ todos, setTodos }) {
         const newTodo = { ...todo, id: id };
         setId(id + 1)
         setTodos([...todos, newTodo]);
+        localStorage.setItem('todos', JSON.stringify([...todos, newTodo]));
         setTodo({ id: 0, name: '', complete: false })
     }
     return (

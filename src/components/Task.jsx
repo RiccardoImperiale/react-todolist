@@ -5,11 +5,15 @@ import { MdRadioButtonUnchecked, MdCheckCircle } from "react-icons/md";
 export default function Task({ item, todos, setTodos }) {
 
     function toggleCompleted(id) {
-        setTodos(todos.map(todo => todo.id === id ? { ...todo, complete: !todo.complete } : todo))
+        const updatedComplete = todos.map(todo => todo.id === id ? { ...todo, complete: !todo.complete } : todo)
+        setTodos(updatedComplete);
+        localStorage.setItem('todos', JSON.stringify(updatedComplete));
     }
 
     function deleteTask(id) {
-        setTodos(todos.filter(todo => todo.id !== id))
+        const updatedTodos = todos.filter(todo => todo.id !== id);
+        setTodos(updatedTodos);
+        localStorage.setItem('todos', JSON.stringify(updatedTodos));
     }
 
     const checkIcon = item.complete ? (
