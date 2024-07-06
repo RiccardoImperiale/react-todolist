@@ -4,18 +4,18 @@ import { MdRadioButtonUnchecked, MdCheckCircle } from "react-icons/md";
 
 export default function Task({ item, todos, setTodos }) {
 
-    function toggleCompleted(name) {
-        setTodos(todos.map(todo => todo.name === name ? { ...todo, complete: !todo.complete } : todo))
+    function toggleCompleted(id) {
+        setTodos(todos.map(todo => todo.id === id ? { ...todo, complete: !todo.complete } : todo))
     }
 
-    function deleteTask(item) {
-        setTodos(todos.filter(todo => todo.name !== item))
+    function deleteTask(id) {
+        setTodos(todos.filter(todo => todo.id !== id))
     }
 
     const checkIcon = item.complete ? (
-        <MdCheckCircle onClick={() => toggleCompleted(item.name)} className='check' />
+        <MdCheckCircle onClick={() => toggleCompleted(item.id)} className='check' />
     ) : (
-        <MdRadioButtonUnchecked onClick={() => toggleCompleted(item.name)} className='uncheck' />
+        <MdRadioButtonUnchecked onClick={() => toggleCompleted(item.id)} className='uncheck' />
     )
 
     return (
@@ -24,7 +24,7 @@ export default function Task({ item, todos, setTodos }) {
                 {checkIcon}
                 {item.name}
             </h3>
-            <FaRegTrashCan className='trash' onClick={() => deleteTask(item.name)} />
+            <FaRegTrashCan className='trash' onClick={() => deleteTask(item.id)} />
         </div>
     )
 }

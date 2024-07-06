@@ -2,7 +2,7 @@ import Task from "./Task"
 import './todolist.css'
 
 export default function TodoList({ todos, setTodos }) {
-    let completedTasks = todos.filter(todo => todo.complete === false)
+    let completedTasks = todos.filter(todo => todo.complete === true)
     return (
         <div className="container">
             <div className="todo_list">
@@ -16,7 +16,7 @@ export default function TodoList({ todos, setTodos }) {
                         </h3>
                     </div>
                     {todos.map(item => (
-                        <Task key={item.name} item={item} todos={todos} setTodos={setTodos} />
+                        <Task key={item.id} item={item} todos={todos} setTodos={setTodos} />
                     ))}
                 </div>
             </div>
