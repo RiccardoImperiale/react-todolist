@@ -8,6 +8,9 @@ export default function Form({ todos, setTodos }) {
 
     function handleSubmit(e) {
         e.preventDefault()
+        if (todo.name.trim() === '') {
+            return
+        }
         const newTodo = { ...todo, id: id };
         setId(id + 1)
         setTodos([...todos, newTodo]);
