@@ -32,10 +32,15 @@
                 }
             }
         }
+
+        .task_list {
+            min-height: 30vh;
+            overflow: auto;
+        }
     }
 }
 
 .todo_it {
     text-align: center;
-    padding-top: 3rem;
+    padding-top: 5rem;
 }

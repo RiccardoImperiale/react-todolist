@@ -16,14 +16,14 @@ export default function TodoList({ todos, setTodos }) {
                             <div className="pill">{completedTasks}</div>
                         </h3>
                     </div>
-
-                    {sortedTasks.map(item => (
-                        <Task key={item.id} item={item} todos={todos} setTodos={setTodos} />
-                    ))}
-
-                </div>
-                <div className="todo_it">
-                    <img width={180} src="./logo-text.png" alt="" />
+                    <div className="task_list">
+                        {sortedTasks.map(item => (
+                            <Task key={item.id} item={item} todos={todos} setTodos={setTodos} />
+                        ))}
+                        <div className="todo_it">
+                            <img width={180} src="./logo-text.png" alt="" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

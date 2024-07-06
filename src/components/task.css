@@ -31,5 +31,6 @@
 
     .trash {
         cursor: pointer;
+        color: var(--todo-secondary-light);
     }
 }

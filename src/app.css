@@ -8,6 +8,11 @@
     --todo-secondary-light: #535967;
 }
 
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--todo-primary) var(--todo-darker);
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -15,6 +20,7 @@ body {
     background-color: var(--todo-dark);
     font-family: sans-serif;
     color: var(--todo-light);
+    height: 100vh;
 }
 
 .container {
