@@ -4,15 +4,15 @@ form {
         margin: auto;
         display: flex;
         align-items: center;
-        max-width: 700px;
+        max-width: 750px;
 
         input {
-            height: 50px;
+            height: 60px;
             width: 100%;
             background-color: var(--todo-secondary-dark);
             border: none;
             font-size: 1.2rem;
-            border-radius: 25px;
+            border-radius: 30px;
             padding-left: 2.5rem;
             color: var(--todo-light);
             caret-color: var(--todo-primary);
@@ -28,7 +28,7 @@ form {
 
         button {
             position: absolute;
-            right: 0.6rem;
+            right: .9rem;
             background-color: var(--todo-darker);
             color: var(--todo-light);
             padding: .7rem 1.2rem .7rem 1.6rem;

@@ -3,7 +3,7 @@ export default function Header() {
     return (
         <header className='header'>
             <div className="container">
-                My Todo List
+                <img width={80} src="/logo.png" alt="logo" />
             </div>
         </header>
     )

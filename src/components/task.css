@@ -1,9 +1,10 @@
 .task {
     padding: .8rem 0;
-    border-bottom: 1px solid var(--todo-secondary);
+    border-bottom: 1px dashed var(--todo-secondary-dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: .5rem;
 
     h3 {
         display: flex;

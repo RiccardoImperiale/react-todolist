@@ -1,7 +1,8 @@
 .header {
     text-align: center;
     background-color: var(--todo-darker);
-    padding: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: .6rem;
     color: var(--todo-primary);
     margin-bottom: 3rem;
 }
