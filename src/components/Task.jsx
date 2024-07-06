@@ -3,15 +3,15 @@ import './task.css'
 import { FaRegTrashCan } from "react-icons/fa6";
 import { MdRadioButtonUnchecked, MdCheckCircle } from "react-icons/md";
 
-export default function Task({ item }) {
+export default function Task({ item, todos, setTodos }) {
     const [check, setCheck] = useState(false)
 
     function toggleClick() {
         setCheck(!check)
     }
 
-    function deleteTask() {
-        setCheck(!check)
+    function deleteTask(item) {
+        setTodos(todos.filter(todo => todo !== item))
     }
 
     const checkIcon = check ? (
@@ -26,7 +26,7 @@ export default function Task({ item }) {
                 {checkIcon}
                 {item}
             </h3>
-            <FaRegTrashCan className='trash' onClick={deleteTask} />
+            <FaRegTrashCan className='trash' onClick={() => deleteTask(item)} />
             {console.log(check)}
         </div>
     )

@@ -1,7 +1,7 @@
 import Task from "./Task"
 import './todolist.css'
 
-export default function TodoList({ todos }) {
+export default function TodoList({ todos, setTodos }) {
     return (
         <div className="container">
             <div className="todo_list">
@@ -15,7 +15,7 @@ export default function TodoList({ todos }) {
                         </h3>
                     </div>
                     {todos.map(item => (
-                        <Task key={item} item={item} />
+                        <Task key={item} item={item} todos={todos} setTodos={setTodos} />
                     ))}
                 </div>
             </div>
