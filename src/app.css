@@ -1,0 +1,23 @@
+:root {
+    --todo-dark: #23272F;
+    --todo-darker: #16181D;
+    --todo-primary: #58C4DC;
+    --todo-light: #F6F7F9;
+    --todo-secondary-dark: #333A44;
+    --todo-secondary: #353A46;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--todo-dark);
+    font-family: sans-serif;
+    color: var(--todo-light);
+}
+
+.container {
+    max-width: 1080px;
+    width: 90%;
+    margin: auto;
+}
