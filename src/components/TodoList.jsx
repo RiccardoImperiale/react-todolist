@@ -19,27 +19,23 @@ export default function TodoList({ todos, setTodos }) {
                         </h3>
                     </div>
                     <AnimatePresence>
-                        <motion.div
-                            className="task_list"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            {sortedTasks.map(item => (
-                                <motion.div
-                                    key={item.id}
-                                    layout
-                                    transition={{ duration: 0.3, type: "spring", stiffness: 500, damping: 30 }}
-                                >
-                                    <Task key={item.id} item={item} todos={todos} setTodos={setTodos} />
-                                </motion.div>
-                            ))}
-                            <div className="todo_it">
-                                <img width={180} src="./logo-text.png" alt="" />
-                            </div>
-                        </motion.div>
+                        {sortedTasks.map(item => (
+                            <motion.div
+                                key={item.id}
+                                layout
+                                transition={{ duration: 0.3, type: "spring", stiffness: 500, damping: 30 }}
+                            >
+                                <Task key={item.id} item={item} todos={todos} setTodos={setTodos} />
+                            </motion.div>
+                        ))}
                     </AnimatePresence>
+                    <motion.div
+                        className="todo_it"
+                        layout
+                        transition={{ duration: 0.3, type: "spring", stiffness: 500, damping: 30 }}
+                    >
+                        <img width={180} src="./logo-text.png" alt="just todo it logo" />
+                    </motion.div>
                 </div>
             </div>
         </div>

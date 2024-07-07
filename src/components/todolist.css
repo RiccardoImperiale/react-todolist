@@ -4,6 +4,7 @@
 
     .list {
         padding: 0 2.5rem;
+        min-height: 400px;
 
         .todo_header {
             padding: .5rem 0;
@@ -31,11 +32,6 @@
                     color: var(--todo-primary);
                 }
             }
-        }
-
-        .task_list {
-            min-height: 30vh;
-            overflow: auto;
         }
     }
 }
