@@ -16,6 +16,12 @@ export default function Task({ item, todos, setTodos }) {
         localStorage.setItem('todos', JSON.stringify(updatedTodos));
     }
 
+    function updateTodo(updatedItem) {
+        const updatedTodos = todos.map(todo => todo.id === updatedItem.id ? { ...todo, name: updatedItem.name } : todo);
+        setTodos(updatedTodos);
+        localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    }
+
     const checkIcon = item.complete ? (
         <MdCheckCircle onClick={() => toggleCompleted(item.id)} className='check' />
     ) : (
@@ -24,10 +30,10 @@ export default function Task({ item, todos, setTodos }) {
 
     return (
         <div className="task">
-            <h3 className={item.complete ? 'checked' : ''}>
+            <div>
                 {checkIcon}
-                {item.name}
-            </h3>
+                <input className={item.complete ? 'checked' : ''} type="text" value={item.name} onChange={(e) => updateTodo({ id: item.id, name: e.target.value, complete: item.complete })} />
+            </div>
             <FaRegTrashCan className='trash' onClick={() => deleteTask(item.id)} />
         </div>
     )
