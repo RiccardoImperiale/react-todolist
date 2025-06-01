@@ -1,5 +1,4 @@
 # Just Todo It.
-## (My first attempt at learning React) 
 - ### ⚛️ React.js 
 - ### ⚙️ Local Storage
 - ### 🗿 Framer Motion 
